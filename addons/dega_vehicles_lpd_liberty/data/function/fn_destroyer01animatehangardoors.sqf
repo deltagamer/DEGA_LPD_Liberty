@@ -28,7 +28,7 @@
 private _shipPart = param [0, objNull];
 private _animationState = param [1, 0];
 private _animationIsInstant = param [2,false];
-private _animationList = ["rightramp", "leftramp","Ramp"];
+private _animationList = ["rightramp", "leftramp","Ramp","RampBarrier"];
 
 if (!isNull _shipPart) then
 {
