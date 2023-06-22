@@ -129,7 +129,17 @@ class CfgVehicles
 				expression="[([_this, 'DEGA_Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart), _value, true] spawn dega_fnc_destroyer01AnimateHangarDoors;";
 				defaultValue="0";
 				typeName="NUMBER";
-			};			
+			};	
+			class ShipWellMainState
+			{
+				displayName="Well Main Doors Open";
+				tooltip="$STR_3den_object_attribute_ShipHangarDoorState_tooltip";
+				property="ShipWellMainState";
+				control="CheckboxNumber";
+				expression="[([_this, 'DEGA_Land_Destroyer_01_hull_05_F'] call bis_fnc_destroyer01GetShipPart), _value, true] spawn dega_fnc_destroyer01AnimateHangarDoors_1;";
+				defaultValue="0";
+				typeName="NUMBER";
+			};				
 			class CustomShipNumber1
 			{
 				displayName="$STR_3den_object_attribute_CustomShipNumber1_displayname";
@@ -180,7 +190,14 @@ class CfgVehicles
 				animPeriod=6;
 				initPhase=0;
 				sound = "ServoRampSound_2";				
-			};		
+			};
+			class Door_Rear_Source
+			{
+				source="user";
+				animPeriod=6;
+				initPhase=0;
+				sound = "ServoRampSound_2";				
+			};				
         };	
 	    class UserActions
 		{
@@ -223,6 +240,26 @@ class CfgVehicles
 				statement="this animate [""Ramp"",1];this animate [""LeftRamp"",1];this animate [""RightRamp"",1];this animate [""RampBarrier"",1];";
 				priority=1;
 				onlyForplayer=0;
+			};
+ 			class CloseRearMain // disabled
+			{
+				displayName= "Close Main Doors"; //Red
+				position="point_button_rear";
+				radius=2;
+				condition="this animationPhase ""Door_Ramp_Barrier"" > 0.45"; //this animationPhase ""Ramp"" > 0.45
+				statement="this animate [""Door_Ramp_Barrier"",0];this animate [""Door_Ramp_Safety"",0];this animate [""Door_Floor"",0];this animate [""Door_Top"",0];this animate [""Door_Bottom"",1];";
+				priority=1;
+				onlyForplayer=0;
+			};
+			class OpenRearMain
+			{
+				displayName= "Open Main Doors"; //Red
+				position="point_button_rear";
+				radius=2;
+				condition="this animationPhase ""Door_Ramp_Barrier"" < 0.45"; //this animationPhase ""Ramp"" < 0.55
+				statement="this animate [""Door_Ramp_Barrier"",1];this animate [""Door_Ramp_Safety"",1];this animate [""Door_Floor"",1];this animate [""Door_Top"",1];this animate [""Door_Bottom"",1];";
+				priority=1;
+				onlyForplayer=0;
 			};  			
         };		
 	};	
@@ -235,9 +272,8 @@ class CfgFunctions
 		class Destroyer
 		{
 			file="dega_vehicles_lpd_liberty\data\function";
-			class Destroyer01AnimateHangarDoors
-			{
-			};
+			class Destroyer01AnimateHangarDoors {};
+			class Destroyer01AnimateHangarDoors_1 {};			
 		};
     };
 };
