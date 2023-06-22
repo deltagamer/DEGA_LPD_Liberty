@@ -247,7 +247,7 @@ class CfgVehicles
 				position="point_button_rear";
 				radius=2;
 				condition="this animationPhase ""Door_Ramp_Barrier"" > 0.45"; //this animationPhase ""Ramp"" > 0.45
-				statement="this animate [""Door_Ramp_Barrier"",0];this animate [""Door_Ramp_Safety"",0];this animate [""Door_Floor"",0];this animate [""Door_Top"",0];this animate [""Door_Bottom"",1];";
+				statement="this animate [""Door_Ramp_Barrier"",0];this animate [""Door_Floor"",0];this animate [""Door_Top"",0];this animate [""Door_Bottom"",1];this animate [""Door_Ramp_Safety_1"",0];this animate [""Door_Ramp_Safety_2"",0];this animate [""Door_Ramp_Safety_3"",0];this animate [""Door_Ramp_Safety_4"",0];";
 				priority=1;
 				onlyForplayer=0;
 			};
@@ -257,7 +257,7 @@ class CfgVehicles
 				position="point_button_rear";
 				radius=2;
 				condition="this animationPhase ""Door_Ramp_Barrier"" < 0.45"; //this animationPhase ""Ramp"" < 0.55
-				statement="this animate [""Door_Ramp_Barrier"",1];this animate [""Door_Ramp_Safety"",1];this animate [""Door_Floor"",1];this animate [""Door_Top"",1];this animate [""Door_Bottom"",1];";
+				statement="this animate [""Door_Ramp_Barrier"",1];this animate [""Door_Floor"",1];this animate [""Door_Top"",1];this animate [""Door_Bottom"",1];this animate [""Door_Ramp_Safety_1"",1];this animate [""Door_Ramp_Safety_2"",1];this animate [""Door_Ramp_Safety_3"",1];this animate [""Door_Ramp_Safety_4"",1];";
 				priority=1;
 				onlyForplayer=0;
 			};  			

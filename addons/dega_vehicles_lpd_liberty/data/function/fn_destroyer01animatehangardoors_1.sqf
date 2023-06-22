@@ -28,7 +28,7 @@
 private _shipPart = param [0, objNull];
 private _animationState = param [1, 0];
 private _animationIsInstant = param [2,false];
-private _animationList = ["Door_Bottom","Door_Top","Door_Floor","Door_Ramp_Barrier","Door_Ramp_Safety"];
+private _animationList = ["Door_Bottom","Door_Top","Door_Floor","Door_Ramp_Barrier","Door_Ramp_Safety_1","Door_Ramp_Safety_2","Door_Ramp_Safety_3","Door_Ramp_Safety_4"];
 
 if (!isNull _shipPart) then
 {
